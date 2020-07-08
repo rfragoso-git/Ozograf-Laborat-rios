@@ -1,6 +1,5 @@
 apiVersion: apps/v1beta1 #  Configurações do deployment
-kind: Deploymet
-preferences: {}
+kind: Deployment
 metadata:
   name: hi-nginx
 
