@@ -1,14 +1,19 @@
-apiVersion: apps/v1beta1 #  Configurações do deployment
+apiVersion: apps/v1 #  Configurações do deployment
 kind: Deployment
 metadata:
   name: hi-nginx
 
-spec:  # Spec do Template do POD
-  replicas: 2
-  template:
+spec:  #  Refere-se ao Deployment
+  replicas: 1
+
+  selector:  #  Utilizado para criação do service
+    matchLabels:
+      app: hi-nginx
+  template:  #  Refernte ao POD
     metadata:
       labels:
         app: hi-nginx
+            
     spec:  #  Spec do Pod
       containers:
       - name: nginx
