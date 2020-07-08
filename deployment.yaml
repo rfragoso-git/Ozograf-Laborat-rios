@@ -5,9 +5,6 @@ metadata:
 
 spec:  # Spec do Template do POD
   replicas: 2
-  selector:
-    matchLabels:
-      app: hi-nginx
   template:
     metadata:
       labels:
@@ -19,13 +16,15 @@ spec:  # Spec do Template do POD
         ports:
         - containerPort: 80
 
-#         - mountPath: /etc/nginx/conf.d
- #           name: nginx-conf
-  #          readOnly: true
-#
- #     volumes:
-  #       configMap:
-   #         name: nginx-conf  # Nome do arquico ConfigMap
-    #        items:
-     #         - key: nginx.conf
-      #          path: nginx.conf
+        volumeMounts:
+          - mountPath: /etc/nginx/conf.d
+            name: nginx-conf
+            readOnly: true
+
+      volumes:
+      - name: nginx-conf  # Nome do arquico ConfigMap
+        configMap:
+          name: nginx-conf
+          items:
+            - key: nginx.conf
+              path: nginx.conf   
