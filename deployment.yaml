@@ -1,10 +1,11 @@
 apiVersion: apps/v1beta1 #  Configurações do deployment
 kind: Deploymet
+preferences: {}
 metadata:
   name: hi-nginx
 
-spec:  # Spec do Deployment
-  replicas: 1
+spec:  # Spec do Template do POD
+  replicas: 2
   selector:
     matchLabels:
       app: hi-nginx
