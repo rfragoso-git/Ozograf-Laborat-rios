@@ -10,5 +10,5 @@ data:
       index index.php index.html;
       root /usr/share/nignx/html;
 
-      rewrite ^ /google$ http://google.com permanent;
+    #  rewrite ^ /google$ http://google.com permanent;
     }
