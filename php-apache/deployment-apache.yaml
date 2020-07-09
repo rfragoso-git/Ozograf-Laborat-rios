@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  creationTimestamp: "2020-07-08T23:22:28Z"
+  generateName: php-apache-hpa-
+  labels:
+    run: php-apache-hpa
+  name: php-apache-hpa-w7b54
+  namespace: default
+  resourceVersion: "183762"
+  selfLink: /api/v1/namespaces/default/services/php-apache-hpa-w7b54
+  uid: 9d4fb11e-1ca5-4c28-9fb7-c8494ac31515
+spec:
+  clusterIP: 10.122.14.99
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: php-apache-hpa
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

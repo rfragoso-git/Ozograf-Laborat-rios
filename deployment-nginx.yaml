@@ -4,7 +4,7 @@ metadata:
   name: hi-nginx
 
 spec:  #  Refere-se ao Deployment
-  replicas: 1
+  replicas: 2
 
   selector:  #  Utilizado para criação do service
     matchLabels:
@@ -20,6 +20,13 @@ spec:  #  Refere-se ao Deployment
         image: nginx:1.17-alpine
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "500m"
+          limits:
+            cpu: "250m"
+              
 
         volumeMounts:
           - mountPath: /etc/nginx/conf.d

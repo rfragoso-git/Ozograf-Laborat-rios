@@ -4,11 +4,10 @@ metadata:
   name: nginx-conf
 data:
   nginx.conf: |
-
     server {
       listen 80;
       index index.php index.html;
       root /usr/share/nignx/html;
-
-    #  rewrite ^/google$ http://google.com permanent;
+      
+      rewrite ^/google$ http://google.com permanent;
     }

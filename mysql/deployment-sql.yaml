@@ -2,17 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql-server
+  
 spec:  #  Refere-se ao Deployment
   replicas: 1
   selector:
     matchLabels:
       app: mysql-server
       tier: db
+
   template:  #  Refernte ao POD
     metadata:
       labels:
         app: mysql-server
         tier: db
+
     spec:  #  Spec do POD
       containers:
       - name: mysql-server
@@ -32,6 +35,7 @@ spec:  #  Refere-se ao Deployment
           limits:
             memory: "128Mi"
             cpu: "500m"
+
         ports:
         - containerPort: 3306
         volumeMounts:  #  Monta o volume efetivamente
