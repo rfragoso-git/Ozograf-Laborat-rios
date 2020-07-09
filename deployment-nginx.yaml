@@ -17,7 +17,7 @@ spec:  #  Refere-se ao Deployment
     spec:  #  Spec do Pod
       containers:
       - name: nginx
-        image: nginx:1.17-alpine
+        image: rof1966/nginx
         ports:
         - containerPort: 80
         resources:

@@ -1,14 +1,14 @@
 apiVersion: v1 
 kind: Pod
 metadata:
-  name: kub-nginx
+  name: test-nginx
 spec:
   containers:
   - name: pod-test
-    image: nginx:1.17-alpine
+    image: rof1966/nginx
     resources:
       limits:
         memory: "128Mi"
         cpu: "500m"
     ports:
-      - containerPort: 80
+      - containerPort: 8085
