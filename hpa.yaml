@@ -9,6 +9,7 @@ spec:
     apiVersion: extension/v1beta1
     kind: Deployment
     name: php-apache-hpa
+  targetCPUUtilizationPercentage: 20
     
 
 

@@ -7,7 +7,7 @@ spec:
     app: mysql-server
     tier: db
   ports:
-  - port: 3306
+  - port: 
     targetPort: 3306
   clusterIP: None
 
